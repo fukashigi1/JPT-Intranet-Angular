@@ -12,11 +12,11 @@ import { ThemeService } from './shared/services/theme.service';
 })
 export class AppComponent {
 
-    constructor(private themeService: ThemeService) {
+  constructor(private themeService: ThemeService) {
 
-    }
+  }
 
-    onThemeSwitchChange(): void {
-      this.themeService.SwitchTheme();
-    }
+  onThemeSwitchChange(): void {
+    this.themeService.SwitchTheme();
+  }
 }

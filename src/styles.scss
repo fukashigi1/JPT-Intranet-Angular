@@ -1,8 +1,35 @@
 @import "themes";
+// Using Google SVG based fonts https://fonts.google.com/icons?selected=Material+Symbols+Outlined:settings:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=gear&icon.size=24&icon.color=%235f6368
+
+@font-face {
+    font-family: Montserrat;
+    src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
     padding: 0;
+    font-size: 12px;
+    font-family: "Montserrat";
+    color: var(--text);
     background-color: var(--background-color);
     transition: all 0.1s;
+}
+
+.icon {
+
+    fill: var(--text);
+    transition: fill 0.05s;
+    transition-timing-function: ease-in;
+}
+
+.clickable:hover {
+    fill: var(--primary);
+    cursor: pointer;
 }
