@@ -7,13 +7,7 @@
     position: relative;
 }
 
-.menu-button {
-    width: 40px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .header-icon-container {
     height: 100%;
@@ -33,8 +27,8 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 0.5rem;
     margin-right: 0.5rem;
+    gap: 5px;
 }
 
 .user-profile-picture {
@@ -56,6 +50,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-left: 0.5rem;
 
     .options {
         position: absolute;
@@ -68,7 +63,7 @@
         -webkit-box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.05);
         -moz-box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.05);
         box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.05);
-        transition: opacity 1s;
+        animation: fadeIn 0.1s ease;
 
         .option-section {
             padding: 1rem 1rem 0 1rem;
@@ -96,18 +91,50 @@
                 align-items: center;
                 gap: 0.5rem;
                 cursor: pointer;
-                padding: 5px 0;
-                transition: color 0.05s;
-                transition-timing-function: ease-in;
-            }
-            
-            li:hover {
-                color: var(--primary);
+                padding: 5px;
+                margin-right: 1rem;
+                border-radius: 0.5rem;
 
-                svg {
-                    fill: var(--primary);
+                a {
+                    text-decoration: none;
+                    color: var(--text);
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+
+                    
                 }
+            }
+            li:hover {
+                background: var(--secondary-transparency-10);
             }
         }
     }
+}
+  
+.header-button-clickable-icon {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer
+}
+
+.header-button-clickable-icon:hover {
+    background: var(--tertiary-transparency-20);
+}
+
+.menu-button {
+    width: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer
+}
+.menu-button:hover {
+    background: var(--tertiary-transparency-20);
 }

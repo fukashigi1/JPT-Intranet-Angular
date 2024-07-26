@@ -29,7 +29,12 @@ body {
     transition-timing-function: ease-in;
 }
 
-.clickable:hover {
-    fill: var(--primary);
-    cursor: pointer;
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
 }

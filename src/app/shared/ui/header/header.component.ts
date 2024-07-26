@@ -1,20 +1,18 @@
 import { Component } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { ClickOutsideDirective } from '../../directives/click.outside.directive';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [ClickOutsideDirective],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   animations: [
-    trigger('openCloseOptions', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('1s ease-in', style({ opacity: 1 }))
-      ]),
+    trigger('openClose', [
       transition(':leave', [
-        animate('1s ease-in', style({ opacity: 0 }))
+        style({opacity: 1}),
+        animate('0.1s ease', style({opacity: 0}))
       ])
     ])
   ]
@@ -25,5 +23,9 @@ export class HeaderComponent {
 
   public showUserOptions(): void {
     this.isProfileOptionsEnabled = !this.isProfileOptionsEnabled;
+  }
+
+  public clickedOutside(): void {
+    this.isProfileOptionsEnabled = false;
   }
 }
