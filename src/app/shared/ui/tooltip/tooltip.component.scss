@@ -1,0 +1,14 @@
+.tooltip-container {
+    position: absolute;
+    background: var(--secondary);
+    color: var(--negative-text);
+    min-width: 100px;
+    max-width: 200px;
+    min-height: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}

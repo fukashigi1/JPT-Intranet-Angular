@@ -1,4 +1,68 @@
 .left-side-bar {
     width: 40px;
-    background: black;
+    height: calc(100vh - 40px);
+    background: var(--secondary-transparency-5);
+    padding: 0.5rem;
+    padding-left: 0;
+    overflow: auto;
+    overflow-x: hidden;
+    display: inline-grid;
+}
+
+.navigation-button {
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: inherit;
+    overflow: hidden;
+
+    a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+        padding: 0.3rem 0.5rem;
+        position: relative;
+
+        span {
+            user-select: none;
+            position: absolute;
+            left: 0px;
+            width: max-content;
+            opacity: 0;
+            &.pop-in-option-text-animation {
+                animation: pop-in-option-text 0.2s ease forwards;
+            }
+            &.pop-out-option-text-animation {
+                animation: pop-out-option-text 0.2s ease forwards;
+            }
+        }
+    }
+}
+
+.navigation-button:hover {
+    background: var(--secondary-transparency-10);
+}
+
+@keyframes pop-out-option-text {
+    from {
+        left: 40px;
+        opacity: 1;
+    }
+    to {
+        left: 0px;
+        opacity: 0;
+    }
+}
+
+@keyframes pop-in-option-text {
+    from {
+        opacity: 0;
+    }
+    to {
+        left: 40px;
+        opacity: 1;
+    }
 }
