@@ -9,6 +9,7 @@ import { DOCUMENT } from '@angular/common';
 export class TooltipDirective {
   @Input() tooltipText = '';
   @Input() tooltipDelay = '0'; 
+  @Input() tooltipIsEnabled = true;
 
   private tooltipComponent?: ComponentRef<any>;
   private showTimeout?: number;
@@ -16,7 +17,7 @@ export class TooltipDirective {
 
   @HostListener('mouseenter')
   onMouseEnter(): void {
-    if (this.showTimeout || this.tooltipComponent) {
+    if (this.showTimeout || this.tooltipComponent || !this.tooltipIsEnabled) {
       return;
     }
 
@@ -76,16 +77,21 @@ export class TooltipDirective {
     let tooltipTop = bottom;
   
     if (tooltipLeft + tooltipWidth > window.innerWidth) {
-      tooltipLeft = window.innerWidth - tooltipWidth - 10; // 10px de margen
+      tooltipLeft = window.innerWidth - tooltipWidth - 60; // 10px de margen
     }
   
     // Asegurarse de que el tooltip no se desborde a la izquierda
     if (tooltipLeft < 10) {
       tooltipLeft = 10; // 10px de margen
     }
-  
+    
+    if (tooltipTop + 20 > window.innerHeight) {
+      tooltipTop = window.innerHeight - 50; // 10px de margen
+      tooltipLeft+=20;
+    }
+
     this.tooltipComponent.instance.left = tooltipLeft;
-    this.tooltipComponent.instance.top = tooltipTop;
+    this.tooltipComponent.instance.top = tooltipTop + 10;
   }
 
   constructor(

@@ -1,0 +1,41 @@
+
+.home-header {
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px solid var(--secondary-10);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.home-header-button {
+    cursor: pointer;
+    height: 100%;
+    
+    a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-decoration: none;
+        padding: 5px;
+        height: inherit;
+        user-select: none;
+
+        svg {
+            height: 17px !important;
+        }
+
+        span {
+
+        }
+    }
+
+    &:hover {
+        background: var(--primary-transparency-20);
+    }
+    
+}
+
+.active-header-button {
+    border-bottom: 2px solid var(--primary);
+}

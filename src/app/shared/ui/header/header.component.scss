@@ -1,5 +1,5 @@
 .header {
-    background: var(--primary);
+    background: var(--primary-70);
     height: 40px;
     width: 100%;
     display: flex;
@@ -66,6 +66,7 @@
         -moz-box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.05);
         box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.05);
         animation: fadeIn 0.1s ease;
+        z-index: 10;
 
         .option-section {
             padding: 1rem 1rem 0 1rem;
@@ -151,14 +152,14 @@
 }
 
 .left-menu-open {
-    animation: RotateRight 0.3s ease-out;
+    animation: RotateRight 0.2s ease-out;
     svg {
         fill: var(--disabled-text);
     }
 }
 
 .left-menu-close {
-    animation: RotateLeft 0.3s ease-out;
+    animation: RotateLeft 0.2s ease-out;
     svg {
         fill: var(--text);
     }

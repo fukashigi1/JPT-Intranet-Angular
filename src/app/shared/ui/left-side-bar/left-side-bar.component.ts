@@ -3,11 +3,12 @@ import { LeftMenuToggleService } from '../../services/left-menu-toggle.service';
 import { CommonModule } from '@angular/common';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { TooltipDirective } from '../../directives/tooltip.directive';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-left-side-bar',
   standalone: true,
-  imports: [CommonModule, TooltipDirective],
+  imports: [CommonModule, TooltipDirective, RouterLink],
   templateUrl: './left-side-bar.component.html',
   styleUrl: './left-side-bar.component.scss',
   animations: [

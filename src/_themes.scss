@@ -1,17 +1,43 @@
 [data-theme="light"] {
-  --primary: #ffda7b;
-  --primary-transparency-90: #ffda7bE6;
-  --primary-transparency-80: #ffda7bCC;
-  --primary-transparency-70: #ffda7bB3;
-  --primary-transparency-60: #ffda7b99;
-  --primary-transparency-50: #ffda7b80;
-  --primary-transparency-40: #ffda7b66;
-  --primary-transparency-30: #ffda7b4D;
-  --primary-transparency-20: #ffda7b33;
-  --primary-transparency-10: #ffda7b1A;
-  --primary-transparency-5: #ffda7b0D;
+  --primary: #E6AD19;
+
+  --primary-90: #e4af2b;
+  --primary-80: #e6b740;
+  --primary-70: #f1c554;
+  --primary-60: #f5cd68;
+  --primary-50: #f3d079;
+  --primary-40: #fadb8d;
+  --primary-30: #f8df9e;
+  --primary-20: #fce6af;
+  --primary-10: #fae9bf;
+  --primary-5: #fff3d3;
+
+
+  --primary-transparency-90: #E6AD19E6;
+  --primary-transparency-80: #E6AD19CC;
+  --primary-transparency-70: #E6AD19B3;
+  --primary-transparency-60: #E6AD1999;
+  --primary-transparency-50: #E6AD1980;
+  --primary-transparency-40: #E6AD1966;
+  --primary-transparency-30: #E6AD194D;
+  --primary-transparency-20: #E6AD1933;
+  --primary-transparency-10: #E6AD191A;
+  --primary-transparency-5: #E6AD190D;
 
   --secondary: #484644; 
+
+  --secondary-90: #5a5755; 
+  --secondary-80: #646160; 
+  --secondary-70: #7a7776; 
+  --secondary-60: #868382; 
+  --secondary-50: #928e8d; 
+  --secondary-40: #9e9b9a; 
+  --secondary-30: #c2bdbc; 
+  --secondary-20: #cecbca; 
+  --secondary-10: #dbd7d6; 
+  --secondary-5: #e4dfde; 
+
+
   --secondary-transparency-90: #484644E6;
   --secondary-transparency-80: #484644CC;
   --secondary-transparency-70: #484644B3;
@@ -24,6 +50,18 @@
   --secondary-transparency-5: #4846440D;
 
   --tertiary: #ffffff;
+
+  --tertiary-90: #e9e9e9;
+  --tertiary-80: #d8d8d8;
+  --tertiary-70: #c5c5c5;
+  --tertiary-60: #afafaf;
+  --tertiary-50: #9e9e9e;
+  --tertiary-40: #858585;
+  --tertiary-30: #6d6d6d;
+  --tertiary-20: #555555;
+  --tertiary-10: #3b3b3b;
+  --tertiary-5: #2b2b2b;
+  
   --tertiary-transparency-90: #ffffffE6;
   --tertiary-transparency-80: #ffffffCC;
   --tertiary-transparency-70: #ffffffB3;
@@ -69,6 +107,18 @@
   --secondary-transparency-5: #4846440D;
 
   --tertiary: #ffffff;
+
+  --tertiary-90: #e9e9e9;
+  --tertiary-80: #d8d8d8;
+  --tertiary-70: #c5c5c5;
+  --tertiary-60: #afafaf;
+  --tertiary-50: #9e9e9e;
+  --tertiary-40: #858585;
+  --tertiary-30: #6d6d6d;
+  --tertiary-20: #555555;
+  --tertiary-10: #3b3b3b;
+  --tertiary-5: #2b2b2b;
+
   --secondary-transparency-90: #ffffffE6;
   --secondary-transparency-80: #ffffffCC;
   --secondary-transparency-70: #ffffffB3;

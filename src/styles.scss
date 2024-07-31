@@ -11,6 +11,8 @@
 
 * {
     box-sizing: border-box;
+    scrollbar-color: var(--primary) var(--secondary-transparency-10);
+    scrollbar-width: thin;
 }
 
 body {
@@ -23,6 +25,8 @@ body {
     transition: all 0.1s;
 }
 
+
+
 .icon {
 
     fill: var(--text);
@@ -30,6 +34,22 @@ body {
     transition-timing-function: ease-in;
 }
 
+a {
+    color: var(--text);
+}
+
 a:active {
-    color: var(--text)
+    color: var(--text);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-transparency-10);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-40);
 }
