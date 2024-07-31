@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { TooltipDirective } from '../../directives/tooltip.directive';
 import { RouterLink } from '@angular/router';
+import { ActivePageService } from '../../services/active-page.service';
 
 @Component({
   selector: 'app-left-side-bar',
@@ -13,7 +14,13 @@ import { RouterLink } from '@angular/router';
   styleUrl: './left-side-bar.component.scss',
   animations: [
     trigger('open-close-menu', [
-      state('closed', style({width: '40px'})),
+      state('closed', style(
+        {
+          width: '40px',
+          "padding-left": '0',
+          "padding-right": '0'
+        }
+        )),
       state('open', style({width: '220px'})),
       transition('closed <=> open', [animate('0.2s ease-out')])
     ])
@@ -21,7 +28,11 @@ import { RouterLink } from '@angular/router';
 })
 export class LeftSideBarComponent {
 
+  public activePageService = inject(ActivePageService);
   public leftMenuToggleService = inject(LeftMenuToggleService);
 
+  setActiveTab(name: string): void {
+    this.activePageService.setLeftSideBarActiveTab(name);
+  }
 
 }
