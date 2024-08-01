@@ -5,14 +5,33 @@
     flex-direction: column;
 }
 
-.news-content {
+.news-content-wrapper {
     height: calc(100% - 30px);
+    display: flex;
+    flex-direction: row;
 }
 
 .news-content {
-
+    width: calc(100% - 400px);
+    background: black;
+    overflow: auto;
+    padding-right: 100px;
+    padding-left: 100px;
 }
 
 .notices-content {
+    width: 400px;
+    background: yellow;
+}
 
+.posts-wrapper {
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.news-post-wrapper {
+    width: 80%;
+    height: 350px;
+    background-color: white;
 }
