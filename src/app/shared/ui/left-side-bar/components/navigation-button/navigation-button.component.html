@@ -1,10 +1,12 @@
 <div class="navigation-button " tooltip [tooltipIsEnabled]="!isLeftMenuOpen()" tooltipText="Ir al inicio">
     <a [routerLink]="link()" 
-        [ngClass]="{'active-navigation-button' : activeTab() == buttonName()}">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"
-            [innerHTML]="svgIcon">
+        [ngClass]="{'active-navigation-button' : activeTab() == link()}">
+        @if (isBrowser) {
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"
+                [innerHTML]="safeHtml">
+            </svg>
+        }
 
-        </svg>
         <span [ngClass]="{'pop-in-option-text-animation' : isLeftMenuOpen(), 'pop-out-option-text-animation' :!isLeftMenuOpen()}">{{displayName()}}</span>
     </a>
 </div>

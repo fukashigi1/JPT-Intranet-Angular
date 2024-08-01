@@ -19,5 +19,9 @@ export default [
   {
     path: 'social',
     component: NewsComponent
+  },
+  {
+    path: 'tools',
+    component: NewsComponent
   }
 ] as Routes;

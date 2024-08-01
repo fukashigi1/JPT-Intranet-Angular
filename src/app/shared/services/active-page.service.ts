@@ -16,7 +16,7 @@ export class ActivePageService {
   }
 
   homeHeaderActiveTab: WritableSignal<string> = signal('news');
-  leftSideBarActiveTab: WritableSignal<string> = signal('home');
+  leftSideBarActiveTab: WritableSignal<string> = signal('home/news');
 
   public setHomeHeaderActiveTab(name: string): void {
     this.homeHeaderActiveTab.set(name);
@@ -27,12 +27,10 @@ export class ActivePageService {
   }
 
   private updateLeftSideBarActiveTab(): void {
-
     if (this.router.url.includes('home')) {
-      this.leftSideBarActiveTab.set('home');
+      this.leftSideBarActiveTab.set('/home/news');
     } else {
-      const urlSegments = this.router.url.split('/');
-      this.leftSideBarActiveTab.set(urlSegments[urlSegments.length - 1]);
+      this.leftSideBarActiveTab.set(this.router.url);
     }
   }
 
