@@ -3,17 +3,17 @@ import { NewsComponent } from '../sub-pages/news/news.component';
 
 export default [
  {
-    path: '', redirectTo: 'novedades', pathMatch: 'full'},
+    path: '', redirectTo: 'news', pathMatch: 'full'},
   {
-    path: 'novedades',
+    path: 'news',
     component: NewsComponent
   },
   {
-    path: 'empleados',
+    path: 'employees',
     component: NewsComponent
   },
   {
-    path: 'eventos',
+    path: 'events',
     component: NewsComponent
   },
   {

@@ -12,6 +12,5 @@ export class NotFoundComponent {
   activePageService = inject(ActivePageService);
   constructor() {
     this.activePageService.setHomeHeaderActiveTab('news')
-    this.activePageService.setLeftSideBarActiveTab('');
   }
 }

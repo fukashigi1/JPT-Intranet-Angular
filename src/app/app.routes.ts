@@ -4,12 +4,16 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'inicio',
+        redirectTo: 'home',
         pathMatch: 'full'
     },
     {
-    path: 'inicio',
+    path: 'home',
     loadChildren:() => import('./pages/home/shell/home.route')
+    },
+    {
+        path: 'module/product-search',
+        component: NotFoundComponent
     },
     {
         path: '404',

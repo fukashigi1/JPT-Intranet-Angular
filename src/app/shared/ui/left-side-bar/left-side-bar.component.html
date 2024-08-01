@@ -1,26 +1,26 @@
 <div class="left-side-bar" [@open-close-menu]="leftMenuToggleService.isLeftMenuOpen ? 'open' : 'closed'">
-    <div class="navigation-button " tooltip [tooltipIsEnabled]="!leftMenuToggleService.isLeftMenuOpen" tooltipText="Ir al inicio">
-        <a [routerLink]="['/inicio/novedades']" 
-            [ngClass]="{'active-navigation-button' : activePageService.getLeftSideBarActiveTab() == 'home'}"
-            (click)="setActiveTab('home')">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
-            <span [ngClass]="{'pop-in-option-text-animation' : leftMenuToggleService.isLeftMenuOpen, 'pop-out-option-text-animation' :!leftMenuToggleService.isLeftMenuOpen}">Inicio</span>
-        </a>
-    </div>
-    <div class="navigation-button" tooltip [tooltipIsEnabled]="!leftMenuToggleService.isLeftMenuOpen" tooltipText="Buscar un producto">
-        <a [routerLink]="['/modulo/buscar-producto']" 
-            [ngClass]="{'active-navigation-button' : activePageService.getLeftSideBarActiveTab() == 'product-search'}"
-            (click)="setActiveTab('product-search')">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M864-40 756-148q-22 13-46 20.5t-50 7.5q-75 0-127.5-52.5T480-300q0-75 52.5-127.5T660-480q75 0 127.5 52.5T840-300q0 26-7.5 50T812-204L920-96l-56 56ZM660-200q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Zm180-360h-80v-200h-80v120H280v-120h-80v560h200v80H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h167q11-35 43-57.5t70-22.5q40 0 71.5 22.5T594-840h166q33 0 56.5 23.5T840-760v200ZM480-760q17 0 28.5-11.5T520-800q0-17-11.5-28.5T480-840q-17 0-28.5 11.5T440-800q0 17 11.5 28.5T480-760Z"/></svg>
-            <span [ngClass]="{'pop-in-option-text-animation' : leftMenuToggleService.isLeftMenuOpen, 'pop-out-option-text-animation' :!leftMenuToggleService.isLeftMenuOpen}">Buscar un producto</span>
-        </a>
-    </div>
-    <div class="navigation-button" tooltip [tooltipIsEnabled]="!leftMenuToggleService.isLeftMenuOpen" tooltipText="Buscar una boleta">
-        <a href="hola" [ngClass]="{'active-navigation-button' : activePageService.getLeftSideBarActiveTab() == 'voucher-search'}">
-            <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M240-80q-50 0-85-35t-35-85v-120h120v-560l60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60v680q0 50-35 85t-85 35H240Zm480-80q17 0 28.5-11.5T760-200v-560H320v440h360v120q0 17 11.5 28.5T720-160ZM360-600v-80h240v80H360Zm0 120v-80h240v80H360Zm320-120q-17 0-28.5-11.5T640-640q0-17 11.5-28.5T680-680q17 0 28.5 11.5T720-640q0 17-11.5 28.5T680-600Zm0 120q-17 0-28.5-11.5T640-520q0-17 11.5-28.5T680-560q17 0 28.5 11.5T720-520q0 17-11.5 28.5T680-480ZM240-160h360v-80H200v40q0 17 11.5 28.5T240-160Zm-40 0v-80 80Z"/></svg>
-            <span [ngClass]="{'pop-in-option-text-animation' : leftMenuToggleService.isLeftMenuOpen, 'pop-out-option-text-animation' :!leftMenuToggleService.isLeftMenuOpen}">Buscar una boleta</span>
-        </a>
-    </div>
+
+    <navigation-button [isLeftMenuOpen]="leftMenuToggleService.isLeftMenuOpen"
+                        [activeTab]="activePageService.getLeftSideBarActiveTab()"
+                        displayIcon='<path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>'
+                        link="/home/news"
+                        buttonName="home"
+                        displayName="Inicio"/>
+                        
+    <navigation-button [isLeftMenuOpen]="leftMenuToggleService.isLeftMenuOpen"
+                        [activeTab]="activePageService.getLeftSideBarActiveTab()"
+                        displayIcon='<path d="M864-40 756-148q-22 13-46 20.5t-50 7.5q-75 0-127.5-52.5T480-300q0-75 52.5-127.5T660-480q75 0 127.5 52.5T840-300q0 26-7.5 50T812-204L920-96l-56 56ZM660-200q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Zm180-360h-80v-200h-80v120H280v-120h-80v560h200v80H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h167q11-35 43-57.5t70-22.5q40 0 71.5 22.5T594-840h166q33 0 56.5 23.5T840-760v200ZM480-760q17 0 28.5-11.5T520-800q0-17-11.5-28.5T480-840q-17 0-28.5 11.5T440-800q0 17 11.5 28.5T480-760Z"/>'
+                        link="/module/product-search"
+                        buttonName="product-search"
+                        displayName="Buscar un producto"/>
+                        
+    <navigation-button [isLeftMenuOpen]="leftMenuToggleService.isLeftMenuOpen"
+                        [activeTab]="activePageService.getLeftSideBarActiveTab()"
+                        displayIcon='<path d="M240-80q-50 0-85-35t-35-85v-120h120v-560l60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60v680q0 50-35 85t-85 35H240Zm480-80q17 0 28.5-11.5T760-200v-560H320v440h360v120q0 17 11.5 28.5T720-160ZM360-600v-80h240v80H360Zm0 120v-80h240v80H360Zm320-120q-17 0-28.5-11.5T640-640q0-17 11.5-28.5T680-680q17 0 28.5 11.5T720-640q0 17-11.5 28.5T680-600Zm0 120q-17 0-28.5-11.5T640-520q0-17 11.5-28.5T680-560q17 0 28.5 11.5T720-520q0 17-11.5 28.5T680-480ZM240-160h360v-80H200v40q0 17 11.5 28.5T240-160Zm-40 0v-80 80Z"/>'
+                        link="/module/voucher-search"
+                        buttonName="voucher-search"
+                        displayName="Buscar una boleta"/>
+                        
     <div class="navigation-button" tooltip [tooltipIsEnabled]="!leftMenuToggleService.isLeftMenuOpen" tooltipText="Buscar un ticket">
         <a href="hola" [ngClass]="{'active-navigation-button' : activePageService.getLeftSideBarActiveTab() == 'ticket-search'}">
             <svg class="icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M120-80v-800l60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60v800l-60-60-60 60-60-60-60 60-60-60-60 60-60-60-60 60-60-60-60 60-60-60-60 60Zm120-200h480v-80H240v80Zm0-160h480v-80H240v80Zm0-160h480v-80H240v80Zm-40 404h560v-568H200v568Zm0-568v568-568Z"/></svg>
