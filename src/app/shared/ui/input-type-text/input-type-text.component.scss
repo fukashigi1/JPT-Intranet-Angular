@@ -1,0 +1,20 @@
+.input-wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+
+    label {
+        position: absolute;
+        background: var(--tertiary);
+        color: var(--text);
+        padding: 0 4px;
+        padding-bottom: 0;
+        border-radius: 60px;
+        top: -7px;
+        left: 15px;
+    }
+
+    input {
+        width: 100%;
+    }
+}
