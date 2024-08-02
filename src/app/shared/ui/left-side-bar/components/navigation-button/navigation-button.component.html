@@ -1,4 +1,4 @@
-<div class="navigation-button " tooltip [tooltipIsEnabled]="!isLeftMenuOpen()" tooltipText="Ir al inicio">
+<div class="navigation-button " tooltip [tooltipIsEnabled]="!isLeftMenuOpen()" tooltipText="{{displayName()}}">
     <a [routerLink]="link()" 
         [ngClass]="{'active-navigation-button' : activeTab() == link()}">
         @if (isBrowser) {

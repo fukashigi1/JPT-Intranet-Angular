@@ -85,7 +85,7 @@ export class TooltipDirective {
       tooltipLeft = 10; // 10px de margen
     }
     
-    if (tooltipTop + 20 > window.innerHeight) {
+    if (tooltipTop + 50 > window.innerHeight) {
       tooltipTop = window.innerHeight - 50; // 10px de margen
       tooltipLeft+=20;
     }

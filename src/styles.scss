@@ -62,6 +62,23 @@ a:active {
   flex-wrap: nowrap;
 }
 
-.gap5 {
-  gap: 5px;
+.flex-column-left-to-right {
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+
 }
+
+.gap5 { gap: 5px; }
+.gap10 { gap: 10px; }
+.gap20 { gap: 20px; }
+.gap30 { gap: 30px; }
+.gap40 { gap: 40px; }
+.gap50 { gap: 50px; }
+.gap60 { gap: 60px; }
+.gap70 { gap: 70px; }
+.gap80 { gap: 80px; }
+.gap90 { gap: 90px; }
+.gap100 { gap: 100px; }
