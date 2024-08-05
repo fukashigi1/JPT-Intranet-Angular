@@ -9,7 +9,7 @@
         
         @for (item of itemsSource(); track item.value) {
             @if(item.name.includes(inputedText()) || firstLoad() == true) {
-                <option class="drop-down-item" [ngClass]="{'active-element' : SelectedItem()?.value == item.value}" value="{{item.value}}" [title]="item.name" (click)="selectOption(item.value, item.name)">
+                <option class="drop-down-item" [ngClass]="{'active-drop-down-element' : SelectedItem()?.value == item.value}" value="{{item.value}}" [title]="item.name" (click)="selectOption(item.value, item.name)">
                     {{item.name}}
                 </option>
             }

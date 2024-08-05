@@ -238,4 +238,10 @@ input[type='radio'] {
 
 .active-element {
   background: var(--primary-30) !important;
+
+  
+}
+.active-drop-down-element {
+  background: var(--primary-30) !important;
+  border-left: 3px solid var(--primary);
 }
