@@ -1,7 +1,6 @@
 .tooltip-container {
     position: absolute;
     background: var(--secondary);
-    color: var(--negative-text);
     min-width: 100px;
     max-width: 200px;
     min-height: 20px;
@@ -12,4 +11,8 @@
     align-items: center;
     padding: 5px;
     user-select: none;
+
+    span {
+        color: var(--negative-text) !important;
+    }
 }

@@ -15,6 +15,7 @@
     scrollbar-width: thin;
     font-size: 12px;
     font-family: "Montserrat";
+    color: var(--text);
 }
 
 body {
@@ -180,10 +181,8 @@ input[type='checkbox'] {
   accent-color: var(--primary);
   cursor: pointer;
   appearance: none;
-  -webkit-appearance: none;
   border: 2px solid var(--secondary-30);
-  border-radius: 50%;
-  clip-path: circle(50% at 50% 50%);
+  border-radius: 0;
   transition: accent-color 0.1s;
 
   &:active {
@@ -196,7 +195,7 @@ input[type='checkbox'] {
 
   &:checked {
     appearance: auto;
-    clip-path: circle(50% at 50% 50%);
+    border-radius: 30%;
   }
 }
 
@@ -235,4 +234,8 @@ select {
 input[type='radio'] {
   accent-color: var(--primary);
   background: var(--tertiary);
+}
+
+.active-element {
+  background: var(--primary-30) !important;
 }

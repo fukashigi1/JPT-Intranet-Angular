@@ -1,0 +1,24 @@
+<div class="input-wrapper" #inputWrapper (clickOutside)="clickedOutside()">
+    <label for="{{idInput()}}">{{labelText()}}</label>
+    <div class="text-input" >
+        <input (document:keydown.esc)="closeDropDown()" (document:keydown.tab)="closeDropDown()" type="text" id="{{idInput()}}" (click)="toggleDropDown()" autocomplete="off" #inputElement value="{{SelectedItem()?.name}}" (input)="inputDetected()"/>
+        <svg class="drop-down-caret" [ngClass]="{'open-caret': isDropDownActive()}" (click)="toggleDropDown()" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-360 280-560h400L480-360Z"/></svg>
+    </div>
+ 
+    <div class="drop-down" #dropDown [ngClass]="{'open-drop-down' : isDropDownActive(), 'close-drop-down': !isDropDownActive()}" >
+        
+        @for (item of itemsSource(); track item.value) {
+            @if(item.name.includes(inputedText()) || firstLoad() == true) {
+                <option class="drop-down-item" [ngClass]="{'active-element' : SelectedItem()?.value == item.value}" value="{{item.value}}" [title]="item.name" (click)="selectOption(item.value, item.name)">
+                    {{item.name}}
+                </option>
+            }
+        }
+
+        @if (noResults()) {
+            <div class="no-results">
+                <span>Sin resultados</span>
+            </div>
+        }
+    </div>
+</div>

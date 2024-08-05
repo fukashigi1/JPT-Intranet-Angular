@@ -1,4 +1,4 @@
 <div class="input-wrapper" [style.width]="inputWidth()">
-    <label for="{{ id() }}">{{labelText()}}</label>
-    <input type="text" id="{{id()}}">
+    <label [for]="idInput()">{{labelText()}}</label>
+    <input type="text" [id]="idInput()">
 </div>
