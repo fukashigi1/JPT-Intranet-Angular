@@ -1,35 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, signal, WritableSignal } from '@angular/core';
 import { InputTypeTextComponent } from '../../shared/ui/input-type-text/input-type-text.component';
 import { InputTypeSelectComponent } from '../../shared/ui/input-type-select/input-type-select.component';
 import { SelectItem } from '../../shared/interfaces/select-item';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-product-search',
   standalone: true,
   imports: [InputTypeTextComponent, InputTypeSelectComponent],
   templateUrl: './product-search.component.html',
-  styleUrl: './product-search.component.scss'
+  styleUrl: './product-search.component.scss',
+  animations: [
+    trigger('pop-card', [
+      transition(':enter', [
+        style(
+          {
+            opacity: 0
+          }
+        ),
+        animate('0.2s', style(
+          {
+            opacity: 1
+          }
+        ))
+      ])
+    ])
+  ]
 })
 export class ProductSearchComponent {
-  testSelect: SelectItem[] = [
-    {
-      value: '1',
-      name: 'primero'
-    },
-    {
-      value: '2',
-      name: 'segundo'
-    },
-    {
-      value: '3',
-      name: 'tercero'
-    },
-    {
-      value: '4',
-      name: 'tercero tercero tercero tercero tercero tercero'
-    }
-  ]; 
+  
+  public didSearch: WritableSignal<boolean> = signal(false);
 
-  selectedItem: SelectItem = this.testSelect[1];
+  public hasLoaded: WritableSignal<boolean> = signal(false);
+
+  public searchProduct(): void {
+    this.didSearch.set(true);
+  }
 
 }
