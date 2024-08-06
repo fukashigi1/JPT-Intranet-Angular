@@ -1,7 +1,4 @@
-.content-wrapper {
-    padding: 1rem;
-    height: 100%;
-}
+
 
 .product-search {
     width: 100%;
@@ -15,22 +12,32 @@
 }
 
 .product-wrapper {
-
+    
 }
 
 .product-info {
-    width: 500px;
+    width: 600px;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem;
+
+    h2 {
+        font-size: 14px;
+        padding: 0 5px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--primary);
+    }
+
+
 }
 
 .product-image {
     height: 400px;
     width: 400px;
     overflow: hidden;
+    padding: 1rem;
     border-radius: 0.4rem;
     img {
         width: 100%;
@@ -44,21 +51,83 @@
     }
 }
 
-.title-skeleton {
-    width: 350px;
-    height: 25px;
-}
-.text-skeleton {
-    width: 250px;
-    height: 20px;
-}
 
 .left-side-options {
-
-    ul {
-        
+    align-items: flex-start;
+    height: 210px;
+    .nav-buttons {
+        margin: 0;
+        padding: 0;
         li {
+            list-style-type: none;
+            border-radius: 50px 0 0 50px;
+            border: 2px solid var(--secondary-10);
+            border-right: none;
+            margin-bottom: 5px;
+            padding: 8px 5px;
+            cursor: pointer;
+            background: var(--tertiary);
+            transition: border 0.2s;
+            user-select: none;
 
+            &:hover {
+                background: var(--secondary-5);
+                border-right: none !important;
+            }
         }
+    }
+}
+
+.info-card {
+    height: 100%;
+    padding: 10px;
+    min-width: 250px;
+    overflow: auto;
+    border-radius: 0 10px 10px 10px;
+    border: 2px solid var(--secondary-10);
+    display: inline-flex;
+    flex-direction: column;
+    -webkit-box-shadow: 10px 10px 20px -7px rgba(0,0,0,0.1);
+    -moz-box-shadow: 10px 10px 20px -7px rgba(0,0,0,0.1);
+    box-shadow: 10px 10px 20px -7px rgba(0,0,0,0.1);
+    position: relative;
+
+    li {
+        list-style: none;        
+
+        strong {
+            margin-right: 5px;
+        }
+    }
+
+    table {
+        thead {
+
+            th {
+                text-align: center;
+            }
+        }
+
+        tbody {
+            .full-span {
+                border-top: 1px solid var(--secondary-20);
+                border-bottom: 1px solid var(--secondary-20);
+            }
+
+            tr {
+
+            }
+        }
+    }
+}
+
+.active-li {
+    position: relative;
+    z-index: 1000;
+    width: calc(100% + 2px);
+    border-bottom: 2px solid var(--primary) !important;
+
+    &:hover {
+        border-right: none !important;
     }
 }

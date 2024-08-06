@@ -1,6 +1,6 @@
 <div class="content-wrapper flex-row gap10">
     <div class="card product-search flex-row gap10" >
-        <span>Buscar un producto</span>
+        <h2>Buscar un producto</h2>
         <div class="flex-column-left-to-right gap5 info-wrapper">
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
             <p>A continuación podrás buscar un producto utilizando como referencia el código de barras o el código de SAP (SKU).</p>
@@ -12,41 +12,308 @@
         </div>
     </div>
     
-    @if (true) {
+    @if (didSearch()) {
         @if (!hasLoaded()) {
-            <div class="card auto-size flex-column-left-to-right product-wrapper" @pop-card>
-                <div class="product-info gap20">
-                    <div class="title-skeleton skeleton"></div>
-                    <div class="text-skeleton skeleton"></div>
-                    <div class="text-skeleton skeleton"></div>
-                    <div class="text-skeleton skeleton"></div>
-                    <div class="left-side-options">
-                        <ul>
-                            <li>
+            <div class="card auto-size flex-column-left-to-right product-wrapper">
+                <div class="product-info gap20" @fade-out>
+                    <div class="title-skeleton skeleton" style="width: 250px; margin-top: 10px"></div>
+                    <div class="text-skeleton skeleton" style="width: 350px; margin-top: 5px"></div>
+                    <div class="text-skeleton skeleton" style="width: 150px"></div>
+                    <span><strong>Detalle del Producto</strong></span>
+                    <div class="left-side-options flex-column-left-to-right">
+                        <ul class="nav-buttons">
+                            <li [ngClass]="{'active-li' : activeProductNavButton() == 'prices'}" (click)="productNavClick('prices')">
                                 Costos
                             </li>
-                            <li>
+                            <li [ngClass]="{'active-li' : activeProductNavButton() == 'characteristics'}" (click)="productNavClick('characteristics')">
                                 Características
                             </li>
-                            <li>
+                            <li [ngClass]="{'active-li' : activeProductNavButton() == 'stock'}" (click)="productNavClick('stock')">
                                 Stock
                             </li>
                         </ul>
+                        @if (activeProductNavButton() == 'prices') {
+                            <div class="info-card" @expand-card-basic>
+                                <div class="flex-row gap10">
+                                    <li>
+                                        <div class="flex-column-left-to-right">
+                                            <strong>CIF:</strong>
+                                            <div class="small-text-skeleton skeleton" style="width: 40px;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex-column-left-to-right">
+                                            <strong>Costo:</strong>
+                                            <div class="small-text-skeleton skeleton" style="width: 40px;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex-column-left-to-right">
+                                            <strong>Precio:</strong>
+                                            <div class="small-text-skeleton skeleton" style="width: 40px;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex-column-left-to-right">
+                                            <strong>Cantidad en módulo:</strong>
+                                            <div class="small-text-skeleton skeleton" style="width: 40px;"></div>
+                                        </div>
+                                    </li>
+                                </div>
+                            </div>
+                        } @else if (activeProductNavButton() == 'characteristics') {
+                            <div class="info-card" @expand-card-basic>
+                                <div class="flex-row gap10">
+                                    <li>
+                                        <div class="flex-column-left-to-right">
+                                            <strong>Tamaño:</strong>
+                                            <div class="small-text-skeleton skeleton" style="width: 40px;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex-column-left-to-right">
+                                            <strong>Color:</strong>
+                                            <div class="small-text-skeleton skeleton" style="width: 40px;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex-column-left-to-right">
+                                            <strong>Sexo:</strong>
+                                            <div class="small-text-skeleton skeleton" style="width: 40px;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex-column-left-to-right">
+                                            <strong>Tester:</strong>
+                                            <div class="small-text-skeleton skeleton" style="width: 40px;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex-column-left-to-right">
+                                            <strong>GWP:</strong>
+                                            <div class="small-text-skeleton skeleton" style="width: 40px;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex-column-left-to-right">
+                                            <strong>Vial:</strong>
+                                            <div class="small-text-skeleton skeleton" style="width: 40px;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex-column-left-to-right">
+                                            <strong>Familia:</strong>
+                                            <div class="small-text-skeleton skeleton" style="width: 40px;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex-column-left-to-right">
+                                            <strong>Sub familia 1:</strong>
+                                            <div class="small-text-skeleton skeleton" style="width: 40px;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex-column-left-to-right">
+                                            <strong>Sub familia 2:</strong>
+                                            <div class="small-text-skeleton skeleton" style="width: 40px;"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex-column-left-to-right">
+                                            <strong>Sub familia 3:</strong>
+                                            <div class="small-text-skeleton skeleton" style="width: 40px;"></div>
+                                        </div>
+                                    </li>
+                                </div>
+                            </div>
+                        } @else if (activeProductNavButton() == 'stock') {
+                            <div class="info-card" @expand-card>
+                                <div class="flex-row gap10">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 250px;">Lote</th>
+                                                <th style="width: 150px;">Cif</th>
+                                                <th style="width: 150px;">Costo</th>
+                                                <th style="width: 180px;">Cantidad</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td class="full-span" colspan="4">
+                                                <div class="small-text-skeleton skeleton" style="width: 120px;"></div>
+                                            </td></tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="small-text-skeleton skeleton" style="width: 100px;"></div>
+                                                </td>
+                                                <td class="number-cell">
+                                                    <div class="small-text-skeleton skeleton" style="width: 45px; float: right"></div>
+                                                </td>
+                                                <td class="number-cell">
+                                                    <div class="small-text-skeleton skeleton" style="width: 45px; float: right"></div>
+                                                </td>
+                                                <td class="number-cell">
+                                                    <div class="small-text-skeleton skeleton" style="width: 20px; float: right"></div>
+                                                </td>
+                                            </tr>
+                                            <tr><td class="full-span" colspan="4">
+                                                <div class="small-text-skeleton skeleton" style="width: 80px;"></div>
+                                            </td></tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="small-text-skeleton skeleton" style="width: 100px;"></div>
+                                                </td>
+                                                <td class="number-cell">
+                                                    <div class="small-text-skeleton skeleton" style="width: 45px; float: right"></div>
+                                                </td>
+                                                <td class="number-cell">
+                                                    <div class="small-text-skeleton skeleton" style="width: 45px; float: right"></div>
+                                                </td>
+                                                <td class="number-cell">
+                                                    <div class="small-text-skeleton skeleton" style="width: 20px; float: right"></div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="small-text-skeleton skeleton" style="width: 100px;"></div>
+                                                </td>
+                                                <td class="number-cell">
+                                                    <div class="small-text-skeleton skeleton" style="width: 45px; float: right"></div>
+                                                </td>
+                                                <td class="number-cell">
+                                                    <div class="small-text-skeleton skeleton" style="width: 45px; float: right"></div>
+                                                </td>
+                                                <td class="number-cell">
+                                                    <div class="small-text-skeleton skeleton" style="width: 20px; float: right"></div>
+                                                </td>
+                                            </tr>
+                                            <tr><td class="full-span" colspan="4">
+                                                <div class="small-text-skeleton skeleton" style="width: 70px;"></div>
+                                            </td></tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="small-text-skeleton skeleton" style="width: 100px;"></div>
+                                                </td>
+                                                <td class="number-cell">
+                                                    <div class="small-text-skeleton skeleton" style="width: 45px; float: right"></div>
+                                                </td>
+                                                <td class="number-cell">
+                                                    <div class="small-text-skeleton skeleton" style="width: 45px; float: right"></div>
+                                                </td>
+                                                <td class="number-cell">
+                                                    <div class="small-text-skeleton skeleton" style="width: 20px; float: right"></div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        }
+                        
                     </div>
                 </div>
-                <div class="product-image">
+                <div class="product-image" @fade-out>
                     <div class="skeleton-img skeleton"></div>
                 </div>
 
             </div>
         } @else {
-            <div class="card fill-size flex-column-left-to-right product-wrapper" @pop-card>
-                <div class="product-info gap20">
-    
+            <div class="card auto-size flex-column-left-to-right product-wrapper" >
+                <div class="product-info gap20" @fade-in>
+                    <h2>VIBE FOR HER EDP 75 ML</h2>
+                    <span><strong>01AJMVIBEEPWUN75</strong></span>
+                    <span>AJMAL, VIBE</span>
+                    <span><strong>Detalle del Producto</strong></span>
+                    <div class="left-side-options flex-column-left-to-right">
+                        <ul class="nav-buttons">
+                            <li [ngClass]="{'active-li' : activeProductNavButton() == 'prices'}" (click)="productNavClick('prices')">
+                                Costos
+                            </li>
+                            <li [ngClass]="{'active-li' : activeProductNavButton() == 'characteristics'}" (click)="productNavClick('characteristics')">
+                                Características
+                            </li>
+                            <li [ngClass]="{'active-li' : activeProductNavButton() == 'stock'}" (click)="productNavClick('stock')">
+                                Stock
+                            </li>
+                        </ul>
+                        @if (activeProductNavButton() == 'prices') {
+                            <div class="info-card" @expand-card-basic>
+                                <div class="flex-row gap10">
+                                    <li><strong>CIF:</strong><span>98.76</span></li>
+                                    <li><strong>Costo:</strong><span>98.76</span></li>
+                                    <li><strong>Precio:</strong><span>209.900</span></li>
+                                    <li><strong>Cantidad en módulo:</strong><span>5</span></li>
+                                </div>
+                            </div>
+                        } @else if (activeProductNavButton() == 'characteristics') {
+                            <div class="info-card" @expand-card-basic>
+                                <div class="flex-row gap10">
+                                    <li><strong>Tamaño:</strong><span>75 ML</span></li>
+                                    <li><strong>Color:</strong><span>null</span></li>
+                                    <li><strong>Sexo:</strong><span>Mujer</span></li>
+                                    <li><strong>Tester:</strong><span>NO</span></li>
+                                    <li><strong>GWP:</strong><span>NO</span></li>
+                                    <li><strong>Vial:</strong><span>NO</span></li>
+                                    <li><strong>Familia:</strong><span>PERFUMES</span></li>
+                                    <li><strong>Sub familia 1:</strong><span>FRAGANCIAS</span></li>
+                                    <li><strong>Sub familia 2:</strong><span>EDP</span></li>
+                                    <li><strong>Sub familia 3:</strong><span></span></li>
+                                </div>
+                            </div>
+                        } @else if (activeProductNavButton() == 'stock') {
+                            <div class="info-card" @expand-card>
+                                <div class="flex-row gap10">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 250px;">Lote</th>
+                                                <th style="width: 150px;">Cif</th>
+                                                <th style="width: 150px;">Costo</th>
+                                                <th style="width: 180px;">Cantidad</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td class="full-span" colspan="4"><strong>G-17 M-13 RA</strong></td></tr>
+                                            <tr>
+                                                <td>101-24-025411-022</td>
+                                                <td class="number-cell">9.8388</td>
+                                                <td class="number-cell">9.8388</td>
+                                                <td class="number-cell">0</td>
+                                            </tr>
+                                            <tr><td class="full-span" colspan="4"><strong>M-004 ET-1</strong></td></tr>
+                                            <tr>
+                                                <td>101-24-025411-022</td>
+                                                <td class="number-cell">9.8388</td>
+                                                <td class="number-cell">9.8388</td>
+                                                <td class="number-cell">0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>101-24-025411-022</td>
+                                                <td class="number-cell">9.8388</td>
+                                                <td class="number-cell">9.8388</td>
+                                                <td class="number-cell">0</td>
+                                            </tr>
+                                            <tr><td class="full-span" colspan="4"><strong>M-004 ET-1</strong></td></tr>
+                                            <tr>
+                                                <td>101-24-025411-022</td>
+                                                <td class="number-cell">9.8388</td>
+                                                <td class="number-cell">9.8388</td>
+                                                <td class="number-cell">0</td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        }
+                        
+                    </div>
                 </div>
-                <div class="product-image">
+                <div class="product-image" @fade-in>
                     <img src="http://192.168.100.33:9102/GestorImagenes/Preview?F=01ELTFBEAUDJOUREPMUN100.jpg">
                 </div>
+
             </div>
         }
     }

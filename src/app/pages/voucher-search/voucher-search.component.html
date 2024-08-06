@@ -1,0 +1,121 @@
+<div class="content-wrapper flex-row gap10">
+    <div class="card voucher-search flex-row gap10" >
+        <h2>Buscar un documento</h2>
+        <div class="flex-column-left-to-right gap5 info-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            <p>A continuación podrás buscar un documento ya sea una boleta/factura o una nota de crédito.</p>
+        </div>
+        <div class="flex-column-left-to-right gap10 form">
+            <input-type-text idInput="bar-code-input" labelText="Folio" inputWidth="200px" />
+            <button class="primary-button" (click)="searchVoucher()">Buscar documento</button>
+        </div>
+    </div>
+
+    @if (didSearch()) {
+        <div class="card fill-size">
+            @if (!hasLoaded()) {
+
+            } @else {
+                <div class="flex-row gap10">
+                    <div class="flex-row gap10">
+                        <div class="flex-column-left-to-right gap10">
+                            <strong>Fecha: </strong><span>10-07-2024 07:47:39</span>
+                        </div>
+                    </div>
+                    <div class="flex-row gap10">
+                        <div class="flex-column-left-to-right gap10">
+                            <strong>Número de boleta: </strong><span>3763611</span>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table [cellSpacing]="0">
+                            <thead>
+                                <tr>
+                                    <th>Linea</th>
+                                    <th>Cantidad</th>
+                                    <th>Un Med</th>
+                                    <th style="width: 350px">Descripción de las mercancías</th>
+                                    <th>Documento de ingreso<br><span style="color: var(--disabled-text)">(Tipo, N, Año, Item)</span></th>
+                                    <th style="width: 70px">Cif total</th>
+                                    <th style="width: 70px">Total</th>
+                                    <th style="width: 250px">Comentario</th>
+                                    <th>Descuento</th>
+                                    <th>Oferta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="number-cell">1</td>
+                                    <td class="number-cell">1</td>
+                                    <td>UN</td>
+                                    <td>07BOTTEGAPANN50CL - LICOR DE CREMA BOTTEGA PANNA COTTA 6X50CL 15°</td>
+                                    <td>101-23-055835-006</td>
+                                    <td class="number-cell">6,07</td>
+                                    <td class="number-cell">8.289</td>
+                                    <td></td>
+                                    <td class="number-cell">0 %</td>
+                                    <td class="number-cell">0 %</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5" rowspan="4" class="no-border-bottom">
+                                        <div class="flex-row gap10 padding10">
+                                            <div class="flex-column-left-to-right gap5">
+                                                <strong>MONTO DE LA VENTA</strong>
+                                                <span>$ 10.900</span>
+                                            </div>
+                                            <div class="flex-column-left-to-right gap10">
+                                                <strong>RETENCIÓN D.L 18.219</strong>
+                                                <span>$ 19,81</span>
+                                            </div>
+                                            <div class="flex-column-left-to-right gap10">
+                                                <strong>MONTO NETO</strong>
+                                                <span>$ 10.880</span>
+                                            </div>
+                                            <div class="flex-column-left-to-right gap10">
+                                                <strong>T/C</strong>
+                                                <span>$ 932,31 </span>
+                                            </div>
+                                            M1029 - EIDER ANDRES OLAYA POSADA
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="max-height: 40px;">
+                                    <td class="number-cell title-cell">
+                                        <small style="color: var(--disabled-text)">Total CIF</small>
+                                        <span>6,07</span>
+                                    </td>
+                                    <td class="number-cell title-cell">
+                                        <small style="color: var(--disabled-text)">Total</small>
+                                        <span>10.900</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="number-cell title-cell">
+                                        <small style="color: var(--disabled-text)">IVA</small>
+                                        <span>0</span>
+                                    </td>
+                                    <td class="number-cell title-cell">
+                                        <small style="color: var(--disabled-text)">Ley 18.211</small>
+                                        <span>0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="number-cell title-cell no-border-bottom">
+                                        <small style="color: var(--disabled-text); text-align: left;">Impuesto adicional</small>
+                                        <span>0</span>
+                                    </td>
+                                    <td class="number-cell title-cell no-border-bottom">
+                                        <small style="color: var(--disabled-text); text-align: left;">Total a pagar</small>
+                                        <span>10.900</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

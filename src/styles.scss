@@ -18,6 +18,10 @@
     color: var(--text);
 }
 
+small {
+  font-size: 10px;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -90,6 +94,25 @@ a:active {
 .gap90 { gap: 90px; }
 .gap100 { gap: 100px; }
 
+.padding5 {padding: 5px;}
+.padding10 {padding: 10px;}
+.padding15 {padding: 15px;}
+.padding20 {padding: 20px;}
+.padding25 {padding: 25px;}
+.padding30 {padding: 30px;}
+.padding35 {padding: 35px;}
+.padding40 {padding: 40px;}
+.padding45 {padding: 45px;}
+.padding50 {padding: 50px;}
+.padding55 {padding: 55px;}
+.padding60 {padding: 60px;}
+
+.no-border {border: none !important;}
+.no-border-left {border-left: none !important;}
+.no-border-right {border-right: none !important;}
+.no-border-top {border-top: none !important;}
+.no-border-bottom {border-bottom: none !important;}
+
 .card {
   padding: 1rem;
   background: var(--tertiary);
@@ -107,6 +130,7 @@ a:active {
   padding: 8px 10px;
   cursor: pointer;
   min-width: 70px;
+  user-select: none;
 
   &:hover {
     background: var(--primary-80);
@@ -274,6 +298,35 @@ input[type='radio'] {
 .skeleton {
   border-radius: 50px;
   animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.title-skeleton {
+  width: 100%;
+  height: 25px;
+}
+.text-skeleton {
+  width: 100%;
+  height: 20px;
+}
+.small-text-skeleton {
+  width: 100%;
+  height: 15px;
+}
+
+.content-wrapper {
+  padding: 1rem;
+  height: 100%;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.number-cell {
+  text-align: right;
 }
 
 @keyframes skeleton-loading {

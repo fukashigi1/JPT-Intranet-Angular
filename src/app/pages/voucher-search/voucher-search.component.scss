@@ -1,0 +1,64 @@
+.voucher-search{
+    height: auto;
+    position: relative;
+}
+
+.table-container {
+    border-radius: 0.5rem;
+    width: max-content;
+    border: 1px solid var(--secondary-20);
+
+    table {
+        margin: 0;
+        border-collapse: collapse;
+        
+        thead {
+            tr {
+                th {
+                    border-bottom: 1px solid var(--secondary-20);
+                    padding: 2px 5px;
+                }
+            }
+        }
+        tbody {
+            
+            
+            tr:last-of-type {
+                //border-bottom: 1px solid var(--secondary-20);
+            }
+            
+            tr {
+                
+                //border-left: 1px solid var(--secondary-20);
+                //border-right: 1px solid var(--secondary-20);
+                td {
+                    border-bottom: 1px solid var(--secondary-20);
+                    border-right: 1px solid var(--secondary-20);
+                    padding: 2px 5px;
+
+                    
+                }
+
+                td:last-child {
+                    
+                }
+                .title-cell {
+                    position: relative;
+
+                    small {
+                        position: absolute;
+                        top: 0;
+                        left: 2.5px;
+                    }
+
+                    span {
+                        position: absolute;
+                        bottom: 2.5px;
+                        right: 2.5px;
+                    }
+                }
+            }
+        }
+    }
+
+}
