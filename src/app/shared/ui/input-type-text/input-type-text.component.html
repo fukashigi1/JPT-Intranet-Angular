@@ -1,4 +1,4 @@
 <div class="input-wrapper" [style.width]="inputWidth()">
     <label [for]="idInput()">{{labelText()}}</label>
-    <input type="text" [id]="idInput()">
+    <input type="text" [id]="idInput()" #inputtext (keydown.escape)="inputtext.blur()" >
 </div>

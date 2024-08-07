@@ -6,13 +6,13 @@
             <p>A continuación podrás buscar un documento ya sea una boleta/factura o una nota de crédito.</p>
         </div>
         <div class="flex-column-left-to-right gap10 form">
-            <input-type-text idInput="bar-code-input" labelText="Folio" inputWidth="200px" />
+            <input-type-text idInput="folio-input" labelText="Folio" inputWidth="200px" />
             <button class="primary-button" (click)="searchVoucher()">Buscar documento</button>
         </div>
     </div>
 
     @if (didSearch()) {
-        <div class="card fill-size">
+        <div class="card auto-size">
             @if (!hasLoaded()) {
 
             } @else {
@@ -45,7 +45,43 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr class="document-line">
+                                    <td class="number-cell">1</td>
+                                    <td class="number-cell">1</td>
+                                    <td>UN</td>
+                                    <td>07BOTTEGAPANN50CL - LICOR DE CREMA BOTTEGA PANNA COTTA 6X50CL 15°</td>
+                                    <td>101-23-055835-006</td>
+                                    <td class="number-cell">6,07</td>
+                                    <td class="number-cell">8.289</td>
+                                    <td></td>
+                                    <td class="number-cell">0 %</td>
+                                    <td class="number-cell">0 %</td>
+                                </tr>
+                                <tr class="document-line">
+                                    <td class="number-cell">1</td>
+                                    <td class="number-cell">1</td>
+                                    <td>UN</td>
+                                    <td>07BOTTEGAPANN50CL - LICOR DE CREMA BOTTEGA PANNA COTTA 6X50CL 15°</td>
+                                    <td>101-23-055835-006</td>
+                                    <td class="number-cell">6,07</td>
+                                    <td class="number-cell">8.289</td>
+                                    <td></td>
+                                    <td class="number-cell">0 %</td>
+                                    <td class="number-cell">0 %</td>
+                                </tr>
+                                <tr class="document-line">
+                                    <td class="number-cell">1</td>
+                                    <td class="number-cell">1</td>
+                                    <td>UN</td>
+                                    <td>07BOTTEGAPANN50CL - LICOR DE CREMA BOTTEGA PANNA COTTA 6X50CL 15°</td>
+                                    <td>101-23-055835-006</td>
+                                    <td class="number-cell">6,07</td>
+                                    <td class="number-cell">8.289</td>
+                                    <td></td>
+                                    <td class="number-cell">0 %</td>
+                                    <td class="number-cell">0 %</td>
+                                </tr>
+                                <tr class="document-line">
                                     <td class="number-cell">1</td>
                                     <td class="number-cell">1</td>
                                     <td>UN</td>
@@ -116,6 +152,7 @@
                     </div>
                 </div>
             }
+            
         </div>
     }
 </div>

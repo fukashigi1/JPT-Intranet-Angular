@@ -1,7 +1,7 @@
 import { Component, OnInit, signal, WritableSignal } from '@angular/core';
-import { InputTypeTextComponent } from '../../shared/ui/input-type-text/input-type-text.component';
-import { InputTypeSelectComponent } from '../../shared/ui/input-type-select/input-type-select.component';
-import { SelectItem } from '../../shared/interfaces/select-item';
+import { InputTypeTextComponent } from '../../../shared/ui/input-type-text/input-type-text.component';
+import { InputTypeSelectComponent } from '../../../shared/ui/input-type-select/input-type-select.component';
+import { SelectItem } from '../../../shared/interfaces/select-item';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 

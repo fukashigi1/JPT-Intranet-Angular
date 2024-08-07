@@ -1,5 +1,5 @@
 .voucher-search{
-    height: auto;
+    min-height: 132px;
     position: relative;
 }
 
@@ -39,9 +39,6 @@
                     
                 }
 
-                td:last-child {
-                    
-                }
                 .title-cell {
                     position: relative;
 
@@ -56,6 +53,13 @@
                         bottom: 2.5px;
                         right: 2.5px;
                     }
+                }
+            }
+
+            .document-line {
+                
+                td:last-child {
+                    border-right: none;
                 }
             }
         }

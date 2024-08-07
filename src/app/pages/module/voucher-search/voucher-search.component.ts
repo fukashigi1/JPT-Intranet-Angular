@@ -1,5 +1,5 @@
 import { Component, signal, WritableSignal } from '@angular/core';
-import { InputTypeTextComponent } from '../../shared/ui/input-type-text/input-type-text.component';
+import { InputTypeTextComponent } from '../../../shared/ui/input-type-text/input-type-text.component';
 
 @Component({
   selector: 'app-voucher-search',
