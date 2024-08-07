@@ -73,10 +73,17 @@
   --tertiary-transparency-10: #ffffff1A;
   --tertiary-transparency-5: #ffffff0D;
 
-  --info-color: blue;
-  --warning-color: yellow;
-  --error-color: red;
-  --success-color: green;
+  --info-color: rgb(44, 44, 107);
+  --info-background: rgb(226, 226, 255);
+
+  --warning-color: rgb(100, 100, 22);
+  --warning-background: rgb(255, 255, 185);
+
+  --error-color: rgb(161, 0, 0);
+  --error-background: rgb(255, 217, 217);
+
+  --success-color: rgb(1, 133, 1);
+  --success-background: rgb(226, 255, 226);
 
   --text: rgb(70, 70, 70);
   --disabled-text: rgb(124, 124, 124);

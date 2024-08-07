@@ -6,6 +6,15 @@
     align-items: center;
     width: 100%;
     overflow: hidden;
+
+    &:focus-within {
+        background: var(--secondary-transparency-10);             
+    }
+
+    &:focus  {
+        background: var(--secondary-transparency-10);
+    }
+
     a {
         text-decoration: none;
         display: flex;
@@ -31,6 +40,7 @@
         }
     }
 }
+
 
 .active-navigation-button {
     background: var(--tertiary);

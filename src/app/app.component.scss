@@ -20,4 +20,27 @@
 
 .content-area > * {
     position: absolute;
+}
+
+.toast-container {
+  height: calc(100% - 40px);
+  width: auto;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column-reverse;
+  pointer-events: none;
+
+  #toastContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    gap: 10px;
+    pointer-events: none;
+    
   }
+}

@@ -194,6 +194,7 @@ input {
   padding: 6px 10px;
   background: var(--tertiary);
   color: var(--text);
+  min-width: 166px;
 
   &:active {
     border: 2px solid var(--primary);
@@ -318,6 +319,7 @@ input[type='radio'] {
 .content-wrapper {
   padding: 1rem;
   height: 100%;
+  overflow: hidden;
 }
 
 h2 {
